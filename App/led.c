@@ -65,9 +65,6 @@ void LedBlinkTask(void)
   static blt_bool ledOn = BLT_FALSE;
   static blt_int32u nextBlinkEvent = 0;
 
-//  char data[6];
-//  data[0]=0x69;
-//  data[1]=0x96;
   /* check for blink event */
   if (TimerGet() >= nextBlinkEvent)
   {
@@ -76,8 +73,6 @@ void LedBlinkTask(void)
     {
       ledOn = BLT_TRUE;
       LL_GPIO_ResetOutputPin(GPIOB, LL_GPIO_PIN_8);
-//      Rs232TransmitPacket(data, 2);
-      //Rs232TransmitByte(0x69);
     }
     else
     {
